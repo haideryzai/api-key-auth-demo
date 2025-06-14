@@ -12,7 +12,7 @@ function generateApiKey(email, expiresInMinutes = 60) {
 
   // Sign the payload using HMAC and secret
   const signature = crypto
-    .createHmac('sha256', process.env.API_SECRET)
+    .createHmac('sha512', process.env.API_SECRET)
     .update(encodedPayload)
     .digest('hex');
 
@@ -26,7 +26,7 @@ function verifyApiKey(apiKey) {
   if (!encodedPayload || !signature) return { valid: false, reason: 'Malformed API key' };
 
   const expectedSignature = crypto
-    .createHmac('sha256', process.env.API_SECRET)
+    .createHmac('sha512', process.env.API_SECRET)
     .update(encodedPayload)
     .digest('hex');
 
