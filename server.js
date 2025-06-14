@@ -8,8 +8,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use('/', generateKeyRoute);
-app.use('/', secureRoute);
+app.get('/', (req, res) => {
+  res.send('API Key Auth Demo - Use /generate-key to create an API key and /secure-data to access secure data.');
+});
+
+app.use('/generate-key', generateKeyRoute);
+app.use('/secure-data', secureRoute);
 
 app.listen(PORT, () => {
   console.log(`API Key Auth Demo running at http://localhost:${PORT}`);
