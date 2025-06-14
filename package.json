@@ -1,0 +1,15 @@
+{
+  "name": "api-key-auth-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon server.js"
+  },
+  "repository": "git@github-me:haideryzai/api-key-auth-demo.git",
+  "author": "Haider Zaman <haiderzamanusafxay@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
